@@ -1,0 +1,22 @@
+body{
+	padding: 10px;
+}
+
+.buttonMargin{
+	margin: 5px 2px 2px 0;
+}
+
+#shuffle{
+	margin: 5px 0 5px 0;
+}
+
+#bipBop{
+	width: 600px;
+	height: 450px;
+	margin: 20px 0;
+}
+
+/*.vjs-texttrack-settings {
+  display: none;
+}
+*/

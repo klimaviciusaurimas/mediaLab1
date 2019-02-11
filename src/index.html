@@ -1,36 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset=utf-8/>
-<title>Lab 1. Introduction to HTML5 and HLS</title>
-  
-  <!--
-  Embed needed js libraries for video player. Note, libraries needs to be hosted on your server, under /js folder.
-   -->
-  <!--
-  Location for CSS if needed. Note, cascade style sheets needs to be hosted on your server, under /css folder.
-  -->
-   
 
+  <meta charset=utf-8/>
+
+  <title>Lab 1. Introduction to HTML5 and HLS</title>
+  
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/video-js.css">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap/bootstrap.css">
 
 </head>
 <body>
-  <h1>My first HLS player</h1>
-  
-  <!--
-  location for your player window
-  -->
-  
-	<button type="button">Play</button>
-	<button type="button">Pause</button>
-	<button type="button">Stop</button>
-	<button type="button">Jump to 5 sec forward</button>
-	<button type="button">Jump to 5 sec backwards</button>	
-	
-	<p>Playlist</p>
-	
-	<input type="text" name="url1" size="100" value="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"><button type="button">Load</button><br>
-	<input type="text" name="url2" size="100" value="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"><button type="button">Load</button><br>
-	<button type="button">Shuffle</button>
+	<h1 class="display-4">HLS Player</h1>
+
+	<video id="bipBop" class="video-js vjs-default-skin" controls>
+		<source type="application/x-mpegURL" src="" id="videoSource">
+		<!--<track kind="captions" src="" srclang="en" label="English" default>-->
+	</video>
+
+	<button type="button" class="btn btn-outline-success buttonMargin" id="play">Play</button>
+	<button type="button" class="btn btn-outline-warning buttonMargin" id="pause">Pause</button>
+	<!--<button type="button" class="btn btn-outline-danger buttonMargin" id="stop">Stop</button>-->	
+	<button type="button" class="btn btn-outline-secondary buttonMargin" id="forward">Forward</button>
+	<button type="button" class="btn btn-outline-secondary buttonMargin" id="backwards">Backwards</button>	
+
+	<hr>
+	<form id="loadUrl">
+		<div class="input-group mb-3">
+		  	<input type="url" class="form-control" id="linkInsert" placeholder="Insert the Link">
+		  		<div class="input-group-append">
+		    	<button class="btn btn-outline-secondary" type="button" id="change">Load</button>
+		  	</div>
+		</div>
+	</form>
+
+	<script src="js/videojs-ie8.min.js"></script>
+	<script src="js/videojs-http-streaming.js"></script>
+	<script src="js/video.js"></script>
+	<script src="js/bootstrap/bootstrap.js"></script>
+	<script type="text/javascript" src="js/control.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+
 </body>
 </html>
